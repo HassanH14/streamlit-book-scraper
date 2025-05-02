@@ -25,10 +25,10 @@ STOCK_COUNT_REGEX = re.compile(r"\((\d+)\s+available\)")
 TITLE_SUFFIX_REGEX = re.compile(r"\s*\([^)]+\)$")
 
 # ==============================================================================
-# --- Data Processing Functions (Cached) ---
+# --- Data Processing Functions ---
 # ==============================================================================
 
-@st.cache_data(ttl=3600) # Cache data for 1 hour.
+# @st.cache_data(ttl=3600) # Cache data for 1 hour.
 def extract_book_data(max_pages=MAX_PAGES_TO_SCRAPE):
     """
     Scrapes book data (title, price, rating, category, stock, url)
@@ -38,7 +38,7 @@ def extract_book_data(max_pages=MAX_PAGES_TO_SCRAPE):
     # Using _allow_output_mutation=True might be needed if internal objects change
     # but for returning a list, it's often fine without it. Consider if caching fails.
 
-    st.info(f"Scraping up to {max_pages} pages (results will be cached)...")
+    st.info(f"Scraping up to {max_pages} pages ...")
     all_books = []
     session = requests.Session() # Use session for efficiency
     session.headers.update({'User-Agent': USER_AGENT})
