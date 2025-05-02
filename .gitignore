@@ -1,0 +1,23 @@
+# Python Bytecode and Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / Installation
+dist/
+build/
+*.egg-info/
+*.so
+
+# Virtual Environments (if you created one named 'venv')
+venv/
+env/
+.env
+
+# IDE files
+.vscode/
+.idea/
+
+# OS specific files
+.DS_Store
+Thumbs.db
